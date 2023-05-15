@@ -36,34 +36,35 @@ const EmployeeList = () => {
 
 	return (
 		<div className="container mx-auto my-8">
-			<div className="h-12">
+			<div className="flex justify-between items-center mb-8">
+				<h1 className="text-3xl font-bold text-gray-800">List of employees</h1>
 				<button
 					onClick={() => navigate("/addEmployee")}
-					className="rounded bg-slate-600 text-white px-6 py-2 font-semibold"
+					className="rounded bg-blue-500 text-white px-6 py-2 font-semibold hover:bg-blue-600 transition-colors"
 				>
 					Add Employee
 				</button>
 			</div>
-			<div className="flex shadow border-b">
-				<table className="min-w-full">
-					<thead className="bg-gray-50">
+			<div className="bg-white shadow-md rounded-lg">
+				<table className="min-w-full divide-y divide-gray-200">
+					<thead className="bg-gray-100">
 						<tr>
-							<th className="text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6">
+							<th className="px-6 py-4 text-left text-gray-600 uppercase">
 								First Name
 							</th>
-							<th className="text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6">
+							<th className="px-6 py-4 text-left text-gray-600 uppercase">
 								Last Name
 							</th>
-							<th className="text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6">
+							<th className="px-6 py-4 text-left text-gray-600 uppercase">
 								Email ID
 							</th>
-							<th className="text-right font-medium text-gray-500 uppercase tracking-wider py-3 px-6">
+							<th className="px-6 py-4 text-right text-gray-600 uppercase">
 								Actions
 							</th>
 						</tr>
 					</thead>
 					{!loading && (
-						<tbody className="bg-white">
+						<tbody className="divide-y divide-gray-200">
 							{employees.map((employee) => (
 								<Employee
 									employee={employee}
